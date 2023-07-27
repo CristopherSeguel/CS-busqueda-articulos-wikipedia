@@ -1,0 +1,121 @@
+/* Estilos personalizados para las tarjetas */
+.card {
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Agregar un margen inferior para separar las tarjetas */
+    padding: 15px; /* Añadir espaciado interno a las tarjetas */
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Agregar un margen inferior para separar el título de la descripción */
+}
+
+.card-text {
+    font-size: 14px;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* Agregar esta propiedad para dividir palabras largas en líneas adicionales */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limitar a 3 líneas */
+    -webkit-box-orient: vertical;
+}
+
+/* Establecer un ancho máximo para el contenido */
+.container {
+    max-width: 100%; /* Cambiar el ancho máximo a 100% para que abarque toda la pantalla */
+    padding: 0 15px; /* Agregar espaciado horizontal para centrar el contenido */
+}
+
+/* Estilo para el contenedor principal */
+.container-fluid {
+    min-height: 100vh; /* Asegurar que el contenedor ocupe al menos el alto de la ventana */
+}
+
+/* Estilo para el contenedor de los artículos */
+.container-mt-4 {
+    margin-top: 40px; /* Agregar un margen superior para separar el contenido del borde superior */
+}
+
+/* Estilo para el buscador y el título */
+.text-center {
+    text-align: center;
+}
+
+/* Estilo para el texto de la card */
+.card-text {
+    font-size: 14px;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* Agregar esta propiedad para dividir palabras largas en líneas adicionales */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limitar a 3 líneas */
+    -webkit-box-orient: vertical;
+}
+
+/* Estilos personalizados para el logo de Wikipedia */
+.logo-wikipedia {
+    max-width: 100%; /* Ancho máximo de la imagen */
+    height: auto; /* Ajustar la altura automáticamente */
+}
+
+/* Estilos para el botón de búsqueda y el icono */
+#btnBuscar {
+    width: 50px;
+}
+
+/* Estilos para pantallas pequeñas (hasta 576px) */
+@media (max-width: 576px) {
+    .container {
+        padding: 0; /* Eliminar el espaciado horizontal para pantallas pequeñas */
+    }
+
+    .logo-wikipedia {
+        max-width: 150px; /* Reduce el tamaño del logo para pantallas pequeñas */
+    }
+
+    .card-title {
+        font-size: 16px; /* Reduce el tamaño del título para pantallas pequeñas */
+    }
+
+    .card-text {
+        font-size: 12px; /* Reduce el tamaño del texto de la card para pantallas pequeñas */
+        -webkit-line-clamp: 2; /* Limitar a 2 líneas para pantallas pequeñas */
+    }
+}
+
+/* Estilos para pantallas medianas (de 577px a 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .logo-wikipedia {
+        max-width: 180px; /* Ajusta el tamaño del logo para pantallas medianas */
+    }
+
+    .card-title {
+        font-size: 18px; /* Ajusta el tamaño del título para pantallas medianas */
+    }
+
+    .card-text {
+        font-size: 14px; /* Ajusta el tamaño del texto de la card para pantallas medianas */
+        -webkit-line-clamp: 3; /* Limitar a 3 líneas para pantallas medianas */
+    }
+}
+
+/* Estilos para pantallas grandes (más de 768px) */
+@media (min-width: 769px) {
+    .container {
+        max-width: 800px; /* Restaura el ancho máximo para pantallas grandes */
+    }
+
+    .logo-wikipedia {
+        max-width: 200px; /* Restaura el tamaño del logo para pantallas grandes */
+    }
+
+    .card-title {
+        font-size: 20px; /* Ajusta el tamaño del título para pantallas grandes */
+    }
+
+    .card-text {
+        font-size: 16px; /* Ajusta el tamaño del texto de la card para pantallas grandes */
+        -webkit-line-clamp: 3; /* Limitar a 3 líneas para pantallas grandes */
+    }
+}

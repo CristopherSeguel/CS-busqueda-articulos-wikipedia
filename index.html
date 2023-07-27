@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Artículos Wikipedia</title>
+    <!-- Agregar estilos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Challenge PinFlag por Cristopher Seguel</a>
+            <!-- Puedes agregar más elementos a la barra de navegación aquí -->
+        </div>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center mt-4">
+        <!-- Logo de Wikipedia -->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="/assets/img/Wikipedia-logo-v2.svg.png" alt="Logo de Wikipedia" class="logo-wikipedia">
+            </div>
+        </div>
+
+        <!-- Título -->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Últimos artículos de Wikipedia</h2>
+            </div>
+        </div>
+
+        <!-- Buscador -->
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" id="buscador" placeholder="Buscar artículos...">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" id="btnBuscar">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+        </div>
+          
+
+        <!-- Listado de artículos -->
+        <div class="container container-mt-4 d-flex flex-column justify-content-center align-items-center">
+            <div class="row" id="listaArticulos">
+                <!-- Aquí se mostrarán los resultados de los artículos -->
+            </div>
+        </div>
+
+        <!-- Elemento para mostrar mensaje de no se encontraron resultados -->
+        <div class="row" id="noResultados" style="display: none;">
+            <div class="col-md-12 text-center">
+                <p>No se encontraron resultados.</p>
+                <!-- Opcional: Puedes agregar una imagen de un monito aquí -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Agregar scripts de JavaScript de Bootstrap (opcional) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Agregar la librería Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Main JS -->
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
