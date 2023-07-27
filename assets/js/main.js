@@ -1,27 +1,34 @@
-
 // Función para obtener los últimos artículos de Wikipedia
 async function obtenerUltimosArticulos() {
-    try {
-      const response = await axios.get('https://es.wikipedia.org/w/api.php?action=query&list=recentchanges&rcnamespace=0&format=json');
-      const articulos = response.data.query.recentchanges;
-      const idsArticulos = articulos.map(articulo => articulo.pageid);
-      const responseDetalles = await axios.get(`https://es.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&pageids=${idsArticulos.join('|')}`);
-      const detallesArticulos = responseDetalles.data.query.pages;
-      articulos.forEach(articulo => {
-        articulo.extract = detallesArticulos[articulo.pageid]?.extract || '';
-      });
-  
-      // Depuración: imprimir lista de artículos con y sin descripción
-      const articulosConDescripcion = articulos.filter(articulo => articulo.extract !== '');
-      const articulosSinDescripcion = articulos.filter(articulo => articulo.extract === '');
-      console.log('Artículos con descripción:', articulosConDescripcion);
-      console.log('Artículos sin descripción:', articulosSinDescripcion);
-  
-      mostrarArticulos(articulos);
-    } catch (error) {
-      console.error('Error al obtener los artículos:', error);
-    }
+  try {
+    const response = await axios.get('https://es.wikipedia.org/w/api.php?action=query&list=recentchanges&rcnamespace=0&format=json', {
+      headers: {
+        'Access-Control-Allow-Origin': '*' // Configuración para CORS
+      }
+    });
+    const articulos = response.data.query.recentchanges;
+    const idsArticulos = articulos.map(articulo => articulo.pageid);
+    const responseDetalles = await axios.get(`https://es.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&pageids=${idsArticulos.join('|')}`, {
+      headers: {
+        'Access-Control-Allow-Origin': '*' // Configuración para CORS
+      }
+    });
+    const detallesArticulos = responseDetalles.data.query.pages;
+    articulos.forEach(articulo => {
+      articulo.extract = detallesArticulos[articulo.pageid]?.extract || '';
+    });
+
+    // Depuración: imprimir lista de artículos con y sin descripción
+    const articulosConDescripcion = articulos.filter(articulo => articulo.extract !== '');
+    const articulosSinDescripcion = articulos.filter(articulo => articulo.extract === '');
+    console.log('Artículos con descripción:', articulosConDescripcion);
+    console.log('Artículos sin descripción:', articulosSinDescripcion);
+
+    mostrarArticulos(articulos);
+  } catch (error) {
+    console.error('Error al obtener los artículos:', error);
   }
+}
   
   
   
