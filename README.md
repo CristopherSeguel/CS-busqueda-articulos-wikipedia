@@ -1,7 +1,7 @@
 # CS-busqueda-articulos-wikipedia
 
 
-Instrucciones para Ver las Pruebas Unitarias
+**Instrucciones para Ver las Pruebas Unitarias**
 
 El proyecto incluye pruebas unitarias para verificar el correcto funcionamiento de las funciones mostrarArticulos() y buscarArticulos().
 
@@ -13,13 +13,13 @@ Abre la consola del navegador. Puedes hacerlo presionando la tecla F12 o haciend
 
 Verás los mensajes console.log que indican si las pruebas unitarias fueron exitosas o si hay algún error.
 
-Tecnologías Utilizadas
+**Tecnologías Utilizadas**
 
 HTML
 CSS
 JavaScript (ES6)
 Axios
 
-Autor
+**Autor**
 Cristopher Seguel
 
