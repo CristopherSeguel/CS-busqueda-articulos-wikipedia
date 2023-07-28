@@ -62,19 +62,19 @@ function mostrarArticulos(articulos) {
 // Función para buscar artículos
 async function buscarArticulos(terminoBusqueda) {
   try {
-    const response = await axios.get(`https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=${terminoBusqueda}&format=json`);
-    const query = response.data?.query; // Verificar si el objeto response.data.query existe
+    const response = await axios.get(`http://localhost:3000/buscar-articulos?terminoBusqueda=${terminoBusqueda}`);
+    const query = response.data?.query;
     if (query && query.search) {
       const resultados = query.search;
       mostrarArticulos(resultados);
     } else {
-      // Si no hay resultados, mostrar un mensaje o hacer algo apropiado
       console.log('No se encontraron resultados.');
     }
   } catch (error) {
     console.error('Error al buscar los artículos:', error);
   }
 }
+
 
 // Evento cuando se carga la página
 document.addEventListener('DOMContentLoaded', () => {
@@ -88,3 +88,25 @@ document.addEventListener('DOMContentLoaded', () => {
     buscarArticulos(terminoBusqueda);
   });
 });
+
+
+
+
+//Pruebas Unitarias
+
+// Función de prueba para buscarArticulos
+async function testBuscarArticulos() {
+  const terminoBusqueda = 'JavaScript';
+
+  // Ejecutar la función buscarArticulos con el término de búsqueda
+  await buscarArticulos(terminoBusqueda);
+
+  // Verificar que se hayan obtenido los resultados correctamente
+  const listaArticulosDiv = document.getElementById('listaArticulos');
+  const cards = listaArticulosDiv.getElementsByClassName('card');
+  console.log(cards.length > 0 ? 'Prueba exitosa: Se obtuvieron resultados para la búsqueda.' : 'Prueba fallida: No se obtuvieron resultados para la búsqueda.');
+}
+
+// Ejecutar la prueba
+testBuscarArticulos();
+

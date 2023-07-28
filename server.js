@@ -1,7 +1,7 @@
 const express = require('express');
+const app = express();
 const axios = require('axios');
 
-const app = express();
 const PORT = 3000;
 
 // Configuración para permitir CORS desde tu frontend (http://127.0.0.7:5500)
@@ -37,6 +37,19 @@ app.get('/ultimos-articulos', async (req, res) => {
   }
 });
 
+// Ruta para buscar artículos
+app.get('/buscar-articulos', async (req, res) => {
+  const { terminoBusqueda } = req.query;
+  try {
+    const response = await axios.get(`https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=${terminoBusqueda}&format=json`);
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error al buscar los artículos:', error);
+    res.status(500).json({ error: 'Error al buscar los artículos' });
+  }
+});
+
+// Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Servidor backend escuchando en http://localhost:${PORT}`);
 });

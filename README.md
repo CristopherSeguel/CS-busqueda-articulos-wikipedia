@@ -2,24 +2,30 @@
 
 Este proyecto es una página de búsqueda de artículos de Wikipedia que utiliza la API de Wikipedia para obtener los últimos artículos y realizar búsquedas en tiempo real.
 
-## Instrucciones para habilitar CORS
+## Requisitos Previos
 
-La API de Wikipedia tiene políticas de seguridad de CORS (Cross-Origin Resource Sharing) que pueden bloquear las solicitudes realizadas desde el navegador. Esto puede provocar problemas al intentar obtener datos de la API directamente desde una página web alojada en otro dominio.
+Antes de ejecutar el servidor backend, asegúrate de tener instalado lo siguiente:
 
-Para que el proyecto funcione correctamente en el navegador, es recomendable instalar la extensión "Allow CORS: Access-Control-Allow-Origin" en tu navegador. Esta extensión permite habilitar CORS para todas las solicitudes en el dominio local.
+- Node.js
 
-### Instalación de la extensión
+## Instrucciones para ejecutar el servidor backend
+Abre la terminal o línea de comandos.
+Navega al directorio donde se encuentra el archivo server.js.
 
-- **Google Chrome**: [Allow CORS: Access-Control-Allow-Origin](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
+Ejecuta el siguiente comando para instalar las dependencias necesarias:
 
-- **Mozilla Firefox**: [Allow CORS: Access-Control-Allow-Origin](https://addons.mozilla.org/es/firefox/addon/access-control-allow-origin/)
+- npm install
 
-Una vez que hayas instalado la extensión, deberías poder utilizar el buscador de artículos de Wikipedia sin problemas.
+Una vez que se hayan instalado las dependencias, inicia el servidor backend con el siguiente comando:
+
+- node server.js
+
+El servidor backend ahora está en funcionamiento y se está ejecutando en http://localhost:3000.
 
 
 **Instrucciones para Ver las Pruebas Unitarias**
 
-El proyecto incluye pruebas unitarias para verificar el correcto funcionamiento de las funciones mostrarArticulos() y buscarArticulos().
+El proyecto incluye pruebas unitarias para verificar el correcto funcionamiento de la funcion buscarArticulos().
 
 Para ver las pruebas unitarias, sigue estos pasos:
 
