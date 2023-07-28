@@ -4,13 +4,15 @@ const axios = require('axios');
 
 const PORT = 3000;
 
-// Configuración para permitir CORS desde tu frontend (http://127.0.0.7:5500)
+// Configuración para permitir CORS desde cualquier origen
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.7:5500');
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Permite cualquier origen
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
+
+
 
 // Ruta para obtener los últimos artículos de Wikipedia
 app.get('/ultimos-articulos', async (req, res) => {
